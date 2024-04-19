@@ -102,6 +102,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Password hashers
+# Django uses the first entry of the list, in this case PBKDF2PasswordHasher, to hash all passwords.
+# The rest of the hashers can be used by Django to check existing passwords.
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.ScryptPasswordHasher',
+    ]
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
